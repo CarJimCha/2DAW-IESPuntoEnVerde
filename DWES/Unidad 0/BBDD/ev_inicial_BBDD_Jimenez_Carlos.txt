@@ -1,0 +1,62 @@
+-- 1. Listado de todos los módulos con toda su información.
+
+SELECT *
+FROM alumnos;
+
+-- 2. Listado de alumnos con el nombre y apellidos.
+
+SELECT nombre, primer_apellido
+FROM alumnos;
+
+-- 3. Listado de alumnos (nombre, primer apellido y segundo apellido), cuyo nombre contenga la cadena 'an' o el primer_apellido termine en 'ez'.
+
+SELECT nombre, primer_apellido, segundo_apellido
+FROM alumnos
+WHERE nombre LIKE '%an%' OR primer_apellido LIKE '%ez';
+
+-- 4. Listado con los nombres, apellidos (primer apellido con alias apellido1 y segundo apellido con alias apellido2), módulos y calificaciones. El listado debe de estar ordenado por el primer apellido.
+
+SELECT a.nombre, a.primer_apellido AS apellido1, a.segundo_apellido AS apellido2, m.nombre, n.calificacion
+FROM alumnos a 
+INNER JOIN notas n 	ON a.id = n.alumno_id
+INNER JOIN modulos m 	ON m.id = n.modulo_id 
+ORDER BY a.primer_apellido;
+
+-- 5. Listado para mostrar todos los alumnos, es suficiente con el nombre del alumno, y además indicar la labor extra que realizan. NOTA: Si el alumno no dispone de ninguna labor queremos mostrarlo igualmente
+
+SELECT a.nombre, e.puesto
+FROM alumnos a
+LEFT JOIN extras e ON a.id = e.alumno_id;
+
+-- 6. Listado donde se muestre la media de las calificaciones de cada alumno ordenados por dicha media de mayor a menor. Recuerda que tienes que agrupar a los alumnos y para el cálculo de la media debes emplear la función agregada AVG.
+
+SELECT a.nombre, a.primer_apellido, a.segundo_apellido, AVG(n.calificacion) as media
+FROM alumnos a 
+	JOIN notas n ON a.id = n.alumno_id
+GROUP BY a.nombre, a.primer_apellido, a.segundo_apellido
+ORDER BY media DESC;
+
+-- 7. Listado donde se muestre la media de las calificaciones de los alumnos cuya media es mayor o igual a 6. Recuerda que mediante el uso de HAVING puedes filtrar los resultados obtenidos mediante la función agregada AVG.
+
+SELECT a.nombre, a.primer_apellido, a.segundo_apellido, AVG(n.calificacion) as media
+FROM alumnos a 
+	JOIN notas n ON a.id = n.alumno_id
+GROUP BY a.nombre, a.primer_apellido, a.segundo_apellido
+HAVING media >= 6
+ORDER BY media DESC;
+
+-- 8. Insertar un nuevo alumno (utiliza tu nombre, apellidos y fecha de nacimiento)
+
+INSERT INTO alumnos (nombre, primer_apellido, segundo_apellido, fecha_nacimiento)
+VALUES ('Carlos','Jimenez','Chavez','1994-12-07');
+
+-- 9. Actualiza el segundo apellido a "Gómez" del alumno con nombre 'Manuel' (Para la condición utiliza el campo que identifique al alumno de forma unívoca).
+
+UPDATE alumnos
+SET primer_apellido = 'Gómez'
+WHERE id IN (SELECT ID FROM alumnos WHERE nombre = 'Manuel');
+
+-- 10. Borrar aquellos alumnos que tengan el puesto de 'Vigilante de pasillo' en la tabla extras.
+
+DELETE FROM alumnos
+WHERE id IN (SELECT alumno_id FROM extras WHERE puesto = 'Vigilante de pasillo');

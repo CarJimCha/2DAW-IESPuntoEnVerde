@@ -1,0 +1,3 @@
+LAMP/WAMP => Linux // Apache // MySQL // PHP
+
+XAMPP => Arriba + Tomcat

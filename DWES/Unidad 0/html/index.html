@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>“Datos Personales</title>
+</head>
+<body>
+  <!-- Encabezado -->
+		<h1>
+			Datos Personales
+  		</h1>
+
+
+  <!-- Formulario Datos Personales -->
+
+		<!-- El formulario -->
+		<form id="myForm" action="/datos_personales.php" method="post">
+			
+			<!-- Los formularios pueden estar separados por divs -->
+
+			<!-- Nombre -->
+			<label for="Nombre">Nombre: </label>
+			<input type="text" id="Nombre" name="Nombre"><br>
+
+			<!-- Apellidos -->
+			<label for="Apellidos">Apellidos: </label>
+			<input type="text" id="Apellidos" name="Apellidos"><br>
+			
+			<!-- Clave -->
+			<label for="Clave">Clave: </label>
+			<input type="password" id="Clave" name="Clave" minlength="4"><br>
+
+			<br>
+
+
+			<!-- Estación favorita -->
+			<label for="Estación favorita del año">Estación favorita del año: </label><br>
+
+			<input type="radio" id="EstPrimavera" name="Estación favorita del año" value="Primavera">
+ 			<label for="html">Primavera</label>
+			<input type="radio" id="EstVerano" name="Estación favorita del año" value="Verano">
+ 			<label for="html">Verano</label>
+			<input type="radio" id="EstOtoño" name="Estación favorita del año" value="Otoño">
+ 			<label for="html">Otoño</label>
+			<input type="radio" id="EstInvierno" name="Estación favorita del año" value="Invierno">
+ 			<label for="html">Invierno</label>
+
+			<br><br>
+ 			
+			<!-- Medio de transporte -->
+			<label for="Medio de transporte">Medio de transporte: </label><br><br>
+			<select id="Medio de transporte" name="Medio de transporte" form="Medio de transporte" autocomplete="off">
+				<option value="">Seleccione Transporte</option> <!-- Como opción por defecto -->
+				<option value="Autobús">Autobús</option>
+				<option value="Bicicleta">Bicicleta</option>
+				<option value="Metro">Metro</option>
+				<option value="Moto">Moto</option>
+				<option value="Patinete">Patinete</option>
+				<option value="Tren">Tren</option>
+			</select>
+
+			<br><br>
+
+			<!-- Aficiones -->
+			<label for="Aficiones">Aficiones: </label><br><br>
+
+			<input type="checkbox" id="Aficiones" name="AfBailar" value="Bailar">
+			<label for="AfBailar">Bailar</label><br>
+			<input type="checkbox" id="AfCantar" name="AfCantar" value="Cantar">
+			<label for="AfCantar">Cantar</label><br>
+			<input type="checkbox" id="AfHacerDeporte" name="AfHacerDeporte" value="Hacer deporte">
+			<label for="AfHacerDeporte">Hacer deporte</label><br>
+			<input type="checkbox" id="AfLeer" name="AfLeer" value="Leer">
+			<label for="AfLeer">Leer</label><br>
+			<input type="checkbox" id="AfVerSeries" name="AfVerSeries" value="Ver Series">
+			<label for="AfVerSeries">Ver Series</label><br>
+			<input type="checkbox" id="AfViajar" name="AfViajar" value="Viajar">
+			<label for="AfVerSeries">Viajar</label><br><br>
+
+			<!-- Observaciones -->
+			<label for="Observaciones">Observaciones: </label><br>
+			<textarea id="Observaciones" name="Observaciones" rows="4" cols="50"></textarea><br>
+
+			<!-- Los dos botones -->
+			<input type="button" onclick="myFunction()" value="Borrar"></form>
+			<input type="submit" value="Enviar">
+
+		</form>
+
+		<!-- Script para borrar (o reiniciar) el formulario -->
+		<script>
+			function myFunction() {
+			  document.getElementById("myForm").reset();
+			}
+		</script>
+
+</body>
+</html>

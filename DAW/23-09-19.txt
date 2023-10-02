@@ -1,0 +1,6 @@
+Windows primero, luego Linux
+
+1- Instalar servicio
+2- Configurar
+3- Pruebas
+
