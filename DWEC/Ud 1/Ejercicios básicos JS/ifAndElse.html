@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If and else</title>
+</head>
+<body>
+    <script>
+        // Ejercicio 1
+        let num1 = prompt("Ingresa un numero");
+        let par = (Number(num1) % 2) == 0;
+        alert(par);
+
+        // Ejercicio 2
+        let num2 = prompt("Ingresa un numero");
+        let div5 = (Number(num2) % 5) == 0;
+        console.log(div5);
+
+        // Ejercicio 3
+        let num3 = prompt("Ingresa un numero");
+        let div5b = (Number(num3) % 5) == 0;
+        let div11 = (Number(num3) % 11) == 0;
+        console.log(div5b && div11);
+
+        // Ejercicio 4
+        let num41 = Number(prompt("Ingresa un numero"));
+        let num42 = Number(prompt("Ingresa otro numero"));
+        if (num41 >= num42){
+            alert(num41);
+        }
+        else{
+            alert(num42);
+        }
+
+        // Ejercicio 5
+        let num51 = Number(prompt("Ingresa un numero"));
+        let num52 = Number(prompt("Ingresa otro numero"));
+        alert(num51 > num52 ? num51 : num52);
+
+    </script>
+</body>
+</html>

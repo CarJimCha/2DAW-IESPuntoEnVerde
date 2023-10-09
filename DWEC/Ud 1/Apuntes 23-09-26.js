@@ -127,3 +127,13 @@ console.log(lista);
 console.log(listacopiada);
 */
 
+/*
+let estado = "conectado";
+console.log(`El usuario está ${estado}.`);
+*/
+
+/*
+let sign = window.prompt("¿Cual es tu signo?");
+// let sign = window.prompt("¿Cual es tu signo?","Sagitario"); // (pregunta, por defecto)
+console.log(sign);
+*/
