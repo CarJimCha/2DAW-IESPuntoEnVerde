@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes 10/10/23</title>
+</head>
+<body>
+
+    <h2>Cadenas</h2>
+
+    <script>
+        const NOMBRE = "Carlos Jiménez";
+        
+        // console.log(typeof NOMBRE);
+        
+        // console.log(NOMBRE.slice("J","é"));
+
+        const str = 'Tres tristes tigres comían trigo en un trigal';
+        const palabra = str.split(' '); // Array de str
+        // alert(palabra[3]); // 'comían'
+        const letras = str.split('');
+        // alert(letras[7]); // 'i'
+
+        // includes, length
+
+    </script>
+
+    <h2>Operadores lógicos</h2>
+
+    <script>
+    // Coercion
+    // danisovan/wtfjs en github
+    
+    // Expresiones regulares
+    var frase = "Este curso voy a aprender mucho Javascript";
+    // console.log(frase.match(/o/g)); // Buscar TODAS las o
+    // console.log(frase.match(/o/)); // Buscar la primera o
+
+    </script>
+
+    <script>
+        let lista = [0,1,2,3];
+
+        /*
+        function loop(elem){
+            console.log(elem);
+        }
+        */
+
+        // For each
+        lista.forEach(function loop(elem){console.log(elem)});
+
+        // Función flecha. La misma que arriba.
+        lista.forEach((elem) => console.log(elem));
+
+        // For of
+        let iterable = [10,20,30];
+        for (let value of iterable){
+            value += 1;
+            console.log(value);
+        }
+
+        
+
+    </script>
+</body>
+</html>
