@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        /*
         // Ejercicio 1
         let num1 = prompt("Ingresa un numero");
         let par = (Number(num1) % 2) == 0;
@@ -32,12 +33,50 @@
         else{
             alert(num42);
         }
-
+        
         // Ejercicio 5
         let num51 = Number(prompt("Ingresa un numero"));
         let num52 = Number(prompt("Ingresa otro numero"));
-        alert(num51 > num52 ? num51 : num52);
-
+        alert("El mayor es: " + (num51 > num52 ? num51 : num52));
+        
+        // Ejercicio 6
+        //Crear un programa que determine si un string introducido por un usuario 
+        // empieza con un número o con una letra.
+        let st6 = prompt("Dime algo: ");
+        let char6 = st6.charAt(0);
+        let num6 = Number.parseInt(char6);
+        if (isNaN(num6)){
+            alert ("El primer caracter es una letra");
+        }
+        else {
+            alert ("El primer caracter era un número");
+        }
+        
+        // Ejercicio 7
+        // Crear un programa donde se introduzcan los tres ángulos internos de un triángulo
+        // y se determine si el triángulo es válido o no.
+        let ang1 = Number(prompt("Ingresa el primer ángulo"));
+        let ang2 = Number(prompt("Ingresa el segundo ángulo"));
+        let ang3 = Number(prompt("Ingresa el tercer ángulo"));
+        if (ang1 > 0 && ang2 > 0 && ang3 > 0) {
+            (ang1 + ang2 + ang3 == 180)
+            ? (alert("Es un triángulo válido"))
+            : (alert("No es un triángulo válido"));
+        }
+        else {
+            alert("No es un triángulo válido");
+        }
+        
+        // Ejercicio 8
+        // Determinar si una palabra empieza con mayúscula o no.
+        let st8 = prompt("Dime una palabra: ");
+        (/^[A-Z]/.test(st8[0]))
+        ? alert("Empieza con mayúscula")
+        : alert ("No empieza con mayúscula");
+        */
+       // Ejercicio 9
+       // Determinar si un año dado es bisiesto.
+       
     </script>
 </body>
 </html>
