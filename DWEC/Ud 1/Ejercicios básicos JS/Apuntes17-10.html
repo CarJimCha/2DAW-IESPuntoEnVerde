@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes 17/10/23</title>
+</head>
+<body>
+    <script>
+
+        /*
+        // Declaramos una función
+        function mapa(x,y,z){
+            console.log(x,y,z);
+        }
+
+        // Llamada a la función
+        mapa(10,15,20);
+
+        // Ahora para objetos, de modo que se puedan imprimir más de tres prop
+        function mapaObj(obj){
+            // El "original", que ya no es necesario
+            // console.log(obj.x,obj.y,obj.z);
+            
+            for(prop in obj){
+                console.log(`Propiedad ${prop} con valor ${obj[prop]}`); 
+                // obj.prop no sirve aquí por ser una variable dinámica
+            }
+        }
+
+        mapaObj({x:10, y:15, z:20});
+
+        var myCar = {
+            make: "Ford",
+            model: "Mustang",
+            year: 1969,
+        }
+        mapaObj(myCar);
+
+        function car(make, model, year){
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        }
+
+        // Definimos un par de funciones para usarlas más adelante
+        function double(x){
+            return x * 2;
+        }
+
+        function sqrt(x){
+            return Math.sqrt(x);
+        }
+
+        // map devuelve el vector aplicando la función a cada parámetro
+        var vector = [5,10,15].map(double);
+        console.log(vector);
+        var vectorSqrt = [1,4,9,16].map(sqrt);
+        console.log(vectorSqrt);
+
+        // La función también se puede hacer en el momento (flecha + "normal")
+        var vector2 = [10,20,30].map(elem => elem /2);
+        var vector3 = [10,20,30].map(function(elem){
+            return elem /2;
+        })
+
+        console.log(vector2);
+        console.log(vector3);
+
+        // Filter... Filtra, para sorpresa de nadie
+        // Devuelve el vector viendo para cada parámetro si cumple la condición
+        let mayores20 = [23,45,67,12,5577].filter((numero) => numero > 20);
+        console.log(mayores20);
+        
+
+        // Call, apply y bind. Diferentes formas de pasar una función a objeto.
+        function saluda(nombre){
+            console.log(nombre);
+            console.log(this.nombre);
+        }
+        saluda("Carlos");
+        */
+
+        // Objeto descuentos
+        var descuentos = {
+            nuevoCliente : 0.3,
+            viejoCliente: 0.2
+        }
+        
+        // Función "descontadora"
+        var functionDescontadora = function(tipoCliente, precio){return this[tipoCliente]*precio};
+        
+        console.log(functionDescontadora("nuevoCliente",3000));
+        // No funciona, porque no entiende el "this[tipoCliente]"
+
+        // Uso de call => objeto.call(thisObjeto,argumentosObjeto)
+        console.log(functionDescontadora.call(descuentos,"nuevoCliente",3000));
+        console.log(functionDescontadora.call(descuentos,"viejoCliente",1000));
+
+        // Uso de apply => objeto.apply(thisObjeto,[argumentosObjeto])
+        console.log(functionDescontadora.apply(descuentos,["nuevoCliente",3000]));
+        console.log(functionDescontadora.apply(descuentos,["viejoCliente",1000]));
+
+        // Uso de bind.
+        // Siempre que se use esta función el this será el relacionado.
+        // Hasta que se haga el unbind.
+        var functionDescontadoraXPerfil = functionDescontadora.bind(descuentos);
+        console.log(functionDescontadoraXPerfil("nuevoCliente",3000));
+        console.log(functionDescontadoraXPerfil("viejoCliente",1000));
+
+        // Funciones inmediatamente invocadas
+
+        </script>
+</body>
+</html>

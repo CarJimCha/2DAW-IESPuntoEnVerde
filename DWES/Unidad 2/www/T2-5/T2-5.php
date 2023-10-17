@@ -66,7 +66,7 @@
             // Si el primero es mayor, marca 1.
             // Si el primero es menor, marca -1.
             switch ($cifra1<=>$cifra2) {
-                case 0: // Este caso es irrelevante, por eso seguimos al paso siguiente
+                case 0: // Este caso es irrelevante para el objetivo del ejercicio, por eso seguimos al paso siguiente
                 case 1:
                     {
                         switch ($cifra1<=>$cifra3) {

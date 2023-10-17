@@ -13,12 +13,13 @@
     
     <!-- Seleccionamos una de las operaciones -->
         <label for="seleccionarOperacion">Seleccione una operación: </label><br><br>
-		<select id="operacion" name="operacion" form="operacion">
-			<option value="default">Seleccione una operación</option> <!-- Como opción por defecto -->
-			<option value="sum">Sumar</option>
-            <option value="res">Restar</option>
-            <option value="mul">Multiplicar</option>
-            <option value="div">Dividir</option>
+		<select id="operacion" name="operacion">
+            <!-- Como opción por defecto -->
+			<option name="default">Seleccione una operación</option> 
+			<option name="sum">Sumar</option>
+            <option name="res">Restar</option>
+            <option name="mul">Multiplicar</option>
+            <option name="div">Dividir</option>
         </select><br>
 
         <!-- Formulario donde introducimos las cifras -->
@@ -35,34 +36,40 @@
     <p><?php
         
         if (isset($_POST["calc"])){ // && isset($_POST["operacion"]) => Debería leerlo
-            
+
             // Declaramos los números, para mayor comodidad
             $n1 = $_POST["num1"];
             $n2 = $_POST["num2"];
 
-            echo "El resultado de la operación es: ";
             // Si la operación es una suma...
 
             $operacion = $_POST["operacion"];
-            echo $operacion;
+            // echo $operacion;
 
-            /*
-            if($operacion  = "sum"){
+            
+            if($operacion  == "Sumar"){
+                echo "El resultado de la operación es: ";
                 echo $n1+$n2;
-            } else if($operacion  = "res"){
+            } else if($operacion  == "Restar"){
+                echo "El resultado de la operación es: ";
                 echo $n1-$n2;
-            } else if($operacion  = "mul"){
+            } else if($operacion  == "Multiplicar"){
+                echo "El resultado de la operación es: ";
                 echo $n1*$n2;
-            } else if($operacion  = "div"){
-                echo $n1/$n2;
+            } else if($operacion  == "Dividir"){
+                if ($n2 == 0){
+                    echo "Error: No puedo dividir entre 0.";
+                } else {
+                    echo "El resultado de la operación es: ";
+                    echo $n1/$n2;
+                }
             } else {
-                echo "Introduzca una operación válida";
+                echo "Error: Seleccione una operación válida.";
             }
-            */ 
+            
         }
 
     ?></p>
-
 
 </body>
 </html>
