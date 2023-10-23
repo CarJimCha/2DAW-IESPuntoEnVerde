@@ -79,7 +79,7 @@
             console.log(this.nombre);
         }
         saluda("Carlos");
-        */
+        
 
         // Objeto descuentos
         var descuentos = {
@@ -107,8 +107,58 @@
         var functionDescontadoraXPerfil = functionDescontadora.bind(descuentos);
         console.log(functionDescontadoraXPerfil("nuevoCliente",3000));
         console.log(functionDescontadoraXPerfil("viejoCliente",1000));
+        
 
         // Funciones inmediatamente invocadas
+        // Las variables que creas no son accesibles desde fuera 
+        (function(){
+            var aName = "Carlos";
+        })();
+        // Se puede guardar como una variable
+        var iife = (function saludame() {
+            var mensaje = "hola";
+            return {
+                atributo1 : mensaje,
+                atributo2 : "Pepe"
+            }
+        })();
+        console.log(iife);
+        console.log(iife.atributo1);
+        
+        
+        // Método reduce
+        const array = [15,16,17,18,19];
+        function reducer (accumulator, curretValue, index){
+            const returns = accumulator + curretValueM;
+            console.log(
+                `accumulator : ${accumulator}, currentValue: ${currentValue},
+                 index: ${index}, returns: ${returns}`,
+            );
+            return returns;
+        }
+        // Ejemplo inicial
+        array.reduce(reducer);
+        // Segundo ejemplo
+        [15,16,17,18,19].reduce(
+            (accumulator, currentValue) => (accumulator + currentValue, 10)
+        );
+        
+
+        // Declarar propiedades
+        objectName.methodname = functionName;
+        // O...
+        var myObj = {
+            myMethod : function(params){
+                // Hacer algo...
+            }
+        }
+        // Ooo...
+        myOtherMethod(params){
+            // Hacer algo...
+        }
+        */
+
+        
 
         </script>
 </body>
