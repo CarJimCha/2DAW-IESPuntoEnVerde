@@ -35,6 +35,9 @@
 
         // Cada vez que tiramos, el número de tiradas aumenta en 1
         $tirada++;
+
+        // Una condición más óptima habría sido...
+        // count(array_unique($array)) < 6
     }
 
     // Mostramos el array de tiradas
@@ -72,6 +75,19 @@
                 echo "<p>El dado $i ha salido $contamos[$i] vez.</p>";
             }
         } 
+
+        /*
+        foreach ($contamos as $num => $veces) {
+            // Si ha salido más de una vez
+            if ($veces > 1){
+                echo "<p>El dado $num ha salido $veces veces.</p>";
+            }
+            // O si ha salido más de una
+            else {
+                echo "<p>El dado $i ha salido $veces vez.</p>";
+            }
+        }
+        */
         
     }
     ?>
