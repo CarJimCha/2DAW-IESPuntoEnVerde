@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body> <!-- También podría ser <body onload="holaMundo()"></body> -->
+    
+    <h1>EJERCICIO 1</h1> 
+    <p>Realiza una página que muestre el mensaje “Hola mundo” en una
+        ventana de alerta haciendo una llamada a una función JavaScript
+        cuando se termine de cargar la página.
+    </p>
+    
+    <script>
+
+        function holaMundo(){
+            alert("Hola Mundo!");
+        }
+
+        window.onload = holaMundo();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>02.1 Recorrer objetos del navegador</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        function creael5y6() {
+
+                //creamos nodo de tipo element
+                let p5 = document.createElement("p");
+                let p6 = document.createElement("p");
+                //Creamos el contenido de tipo texto
+                let contenido = document.createTextNode("Hola soy el párrafo 5");
+                let contenido1 = document.createTextNode("Hola soy el párrafo 6");
+                //Le damos un id
+                p5.id="p5";
+                p6.id="p6";
+                //Asociamos el contenido al nodo
+                p5.appendChild(contenido);
+                p6.appendChild(contenido1);
+                //incluimos el nodo elemento al DOM
+                document.body.appendChild(p5); 
+                document.body.appendChild(p6);
+                //Muestro el boton
+                document.getElementById("btnElimina5").style.display="block";
+            }
+        
+            function elimina5(){
+                let p5          = document.getElementById("p5"); 
+                let padreDe5    = p5.parentNode;
+                padreDe5.removeChild(p5);
+            }
+        
+    </script>
+</head>
+
+<body>
+    <p id="p1" class="parrafo">Hola soy el p&aacute;rrafo 1</p>
+    <p id="p2" class="parrafo">Hola soy el p&aacute;rrafo 2</p>
+    <p id="p3" class="parrafo">Hola soy el p&aacute;rrafo 3</p>
+    <p id="p4" class="parrafo">Hola soy el p&aacute;rrafo 4</p>
+
+    <button onclick="creael5y6()">Crea dos p&aacute;rrafos m&aacute;s</button>
+    <button id="btnElimina5" style="display: none;" onclick="elimina5()">elimina el 5</button>
+    
+</body>
+
+</html>

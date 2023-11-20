@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>02.1 Recorrer objetos del navegador</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        function ver() {
+
+                let a = "";
+
+                for (let i = 0; i <= document.forms[0].elements.length - 1; i++) {
+
+                    a = a + document.forms[0].elements[i].value + "\n";
+
+                }
+
+                return confirm(a + "¿Enviar?");
+
+            } 
+    </script>
+</head>
+
+<body>
+    <form id="idForm" name="nameForm" action="">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" placeholder="Escribe tu nombre" id="nombre" /> <br/>
+
+        <label for="estatura">Estatura:</label>
+        <input type="number" min="100" max="220" id="estatura" /><span> cms.</span><br/>
+
+        <label for="peso">Peso:</label>
+        <input type="number" min="30" max="150" id="peso" /><span> kg.</span><br/>
+
+        <button type="submit" onclick="ver()">Enviar valores</button>
+
+    </form>
+
+    
+</body>
+
+</html>

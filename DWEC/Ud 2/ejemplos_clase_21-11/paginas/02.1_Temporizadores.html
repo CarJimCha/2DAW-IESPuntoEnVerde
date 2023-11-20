@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<!-- Pedir mod para reseteo de X -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>02. Pruebas con temporizadores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        var a = "";
+        var idI;
+
+        function muestraMensaje() {
+            a = a + "X";
+            console.log(a);
+        }
+
+        function dosSegundos(){
+            setTimeout(muestraMensaje,2000);
+        }
+
+        function empieza() {
+            idI = setInterval(muestraMensaje, 1000);
+        }
+
+        function termina() {
+            clearInterval(idI);
+            a = "";
+        } 
+    </script>
+</head>
+
+<body>
+
+    <button onclick="dosSegundos()">Muestra en 2 segundos</button>
+    <button onclick="termina()">Parar y reiniciar!!!</button>
+    <button onclick="empieza()">Empezar</button>
+    
+</body>
+
+</html>
