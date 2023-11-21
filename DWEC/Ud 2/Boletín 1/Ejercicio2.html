@@ -17,27 +17,48 @@
 
     <script>
 
+        // EJECUCIONES
+
+        preguntaNombre();
+        tresSegundos();
+
+
+        // FUNCIONES     
+        
         function preguntaNombre(){
+            
+            // Preguntamos nombre y validamos
             let nombre = "";
             nombre = prompt("Escribe tu nombre:");
-            
             while (nombre === "" || nombre === null){
                 nombre = prompt("Escriba su nombre bien, por favor:");
             }   
+
+            // Creamos el elemento h1
+            let h1 = document.createElement("h1");
+            // Creamos el contenido
+            let contenidoH1 = document.createTextNode("Bienvenido, " + nombre + "!");
+            // Los enlazamos entre ellos
+            h1.appendChild(contenidoH1);
+            // Y a ellos con el documento
+            document.body.appendChild(h1);
+            
         }
+
 
         function tresSegundos(){
-            setTimeout(muestraMensaje,3000);
+            setTimeout(() => {
+                let h2 = document.createElement("h2");
+                let contenidoH2 = document.createTextNode(location.href); // == URL
+                h2.appendChild(contenidoH2);
+                document.body.appendChild(h2);
+            },3000);
         }
 
-        function muestraMensaje(){
-            let dir = document.createElement("h1");
-            let cont = document.createTextNode("Bienvenido " + nombre + "!");
-            document.body.appendChild(dir);
-        }
+        
 
-        window.onload = preguntaNombre();
-        window.onload = tresSegundos();
+        
+        
 
     </script>
 

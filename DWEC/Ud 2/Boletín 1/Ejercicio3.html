@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+
+    <h1>Ejercicio 3</h1>
+
+    <pre>Realiza un ejercicio en el que en un formulario se pueda escribir un
+nombre y una edad. Si el usuario es mayor de edad, al pulsar un
+botón debe escribirse en la página:
+        “El usuario nombre es mayor de edad”</pre>
+
+    <form >
+        <label for="nombre">Escribe tu nombre: </label>
+        <input type="text" id="nombre">
+        <br>
+        <label for="edad">Escribe tu edad: </label>
+        <input type="number" id="edad">
+        <br>
+        
+    </form>
+
+    <button id="enviar" onclick="validarEdad()">Enviar</button>
+    
+    <script>
+
+        // Reafirmamos la funcionalidad del botón. ¿Por qué? Who knows?
+        document.getElementById("enviar").onclick = validarEdad;
+
+        function validarEdad(){
+            var edad    = document.getElementById("edad").value;
+            var nombre  = document.getElementById("nombre").value;
+            if (!isNaN(edad)){
+                if (edad >= 18){
+                    let p = document.createElement("p");
+                    let contenido = document.createTextNode("El usuario " + 
+                        nombre + " es mayor de edad.");
+                    p.appendChild(contenido);
+                    document.body.appendChild(p);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
