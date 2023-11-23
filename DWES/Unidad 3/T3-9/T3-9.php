@@ -95,7 +95,7 @@
             
             //6. Validar una variable php
             echo "<h4>6. ¿Es una variable PHP?</h4>";
-            if(preg_match_all("/^[$].+\S+$/", $texto)){
+            if(preg_match_all("/^\$[_a-zA-Z].*]\S+$/", $texto)){
                 echo '<p class="verde">Sí, es una variable PHP.</p>';
             }
             else {
@@ -121,7 +121,9 @@
             
             //8. Validar un dirección http ó https
             echo "<h4>8. ¿Es una dirección http ó https?</h4>";
-            if(preg_match_all("/^[h][t][t][p][s]?[:][\/][\/].+$/", $texto)){ // "/^http[s]?[:]\/\/.+$/"
+            if(preg_match_all("/^[h][t][t][p][s]?[:][\/][\/].+$/", $texto)){ 
+                           // "/^http[s]?:\/\/.+$/"
+                           // "#^http[s]?://.+$#" => Se puede usar #, (), [], {} para abrir y cerrar
                 echo '<p class="verde">Sí, es una dirección http ó https.</p>';
             }
             else {
@@ -132,6 +134,7 @@
             echo "<h4>9. ¿Es una dirección de correo para gmail.com, outlook.es y g.educaand.es?</h4>";
             if(preg_match_all("/^[a-zA-Z0-9.-_]*[@][gog][mu.][ate][ild][lou][.oc][cka][o.a][men][sd]?[.]?[e]?[s]?$/", $texto)){ 
                             // /^[a-zA-Z0-9.-_]*[@](google|outlook|g).(com|es|educaand)(.es)?$/
+                            // /^[a-zA-Z0-9.-_]*@(gmail.com|outlook.es|g.educaand.es)$/
                 echo '<p class="verde">Sí, es una dirección de correo para gmail.com, outlook.es y g.educaand.es.</p>';
             }
             else {
