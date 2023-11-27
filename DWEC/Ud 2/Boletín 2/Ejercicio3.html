@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <div class="drill_cursor" onclick='escribir();'><p>0</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>1</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>2</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>3</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>4</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>5</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>6</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>7</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>8</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>9</p></div>
+    <div class="drill_cursor" onclick='escribir();'><p>10</p></div>
+
+    <h1 id="NumEscri"></h1>
+
+    <script>
+
+        function escribir(){
+            let text = event.target.innerHTML;
+            document.getElementById("NumEscri").innerHTML = text;
+
+        }
+
+    </script>
+</body>
+</html>
