@@ -113,7 +113,6 @@
             else {
                 echo "<p>No hemos podido crear el fichero de pruebas</p>";
             }
-
             
         }
         
@@ -122,7 +121,7 @@
         if (file_exists($fichero)){
 
             // Si existe, lo lee
-            if ($file = fopen($file, 'r'){
+            if ($file == fopen($file, 'r')){
                 
                 // Se lee correctamente, leo
                 while (!feof($file2)){
@@ -133,7 +132,7 @@
                     // Se imprime una línea
                     echo "<p>$linea</p>";
                 }
-            })
+            }
             
             // Se cierra el fichero
             fclose($fichero);
