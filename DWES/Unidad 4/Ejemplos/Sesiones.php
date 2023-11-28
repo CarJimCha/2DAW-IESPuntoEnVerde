@@ -1,6 +1,8 @@
 <?php 
     // Iniciamos la sesion
-    session_name('misesion');
+    session_name('misesion');       // set
+    $id_session = session_name();   // get
+    
     session_start();
 
     // Comprobamos que existe una sesion
