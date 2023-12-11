@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos</title>
+</head>
+
+    <p>Pulsa el bot&oacute;n para <input type="button" value="a&ntilde;adir" onclick="mas1();" /> 
+    o <input type="button" value="eliminar" onclick="elimina();" /> un elemento de la lista</p>
+
+    <ol id="lista">
+        <script>
+
+            // Contador de datos
+            let datos = 0;
+
+            // 
+    
+            // Al pulsar el botón de añadir
+            function mas1(){
+                
+                // Añadimos un dato al contador
+                datos++;
+    
+                // Añadimos un elemento a la lista
+                let li = document.createElement("li");
+                li.innerHTML = prompt("Introduce un dato:");
+                document.body.appendChild(li);
+                
+                // Tocaría darle alguna propiedad (nombre o id) para poder seleccionarlo
+    
+            }
+
+            // Al pulsar el botón de eliminar
+            function elimina(){
+
+                let num = prompt("Introduzca un número si quiere eliminar alguno en concreto:");
+
+                // Determinamos si ha introducido un número
+                if (isNaN(num)) {
+
+                    // Si no es un numero, eliminamos el último elemento
+                    eliminaUltimo();
+                }
+
+                else {
+
+                    // En caso de que sea un numero, eliminamos el elemento "elimina"
+                    eliminaNumero(num);
+                }
+            }
+
+            // Eliminar último elemento
+            function eliminaUltimo(){
+                // Elimina el último elemento de la lista
+            }
+
+            // Eliminar un elemento concreto
+            function eliminaNumero(num){
+                // Elimina el elemento "num" de la lista
+            }
+
+    
+        </script>
+    </ol>
+
+    
+
+</body>
+</html>
