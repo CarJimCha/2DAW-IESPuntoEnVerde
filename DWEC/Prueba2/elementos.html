@@ -10,7 +10,14 @@
     <p>Pulsa el bot&oacute;n para <input type="button" value="a&ntilde;adir" onclick="mas1();" /> 
     o <input type="button" value="eliminar" onclick="elimina();" /> un elemento de la lista</p>
 
+
     <ol id="lista">
+        <li>primer dato</li>
+        <li>segundo dato</li>
+        <li>tercer dato</li>
+        <li>cuarto dato</li>
+    </ol>
+    
         <script>
 
             // Contador de datos
@@ -27,7 +34,7 @@
                 // Añadimos un elemento a la lista
                 let li = document.createElement("li");
                 li.innerHTML = prompt("Introduce un dato:");
-                document.body.appendChild(li);
+                document.getElementById("lista").appendChild(li);
                 
                 // Tocaría darle alguna propiedad (nombre o id) para poder seleccionarlo
     
@@ -55,16 +62,19 @@
             // Eliminar último elemento
             function eliminaUltimo(){
                 // Elimina el último elemento de la lista
+                const list = document.getElementById("lista");
+                list.removeChild(list.lastElementChild);
             }
 
             // Eliminar un elemento concreto
             function eliminaNumero(num){
                 // Elimina el elemento "num" de la lista
+                const list = document.getElementById("lista");
+                list.removeChild(list.children[num -1]);
             }
 
     
         </script>
-    </ol>
 
     
 

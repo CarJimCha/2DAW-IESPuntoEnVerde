@@ -53,6 +53,7 @@
                 // Si coinciden, nos redirige al portal de usuario
                 echo '<p>Puedes seguir hacia el <a href="/u4/Examen%20PHP/sesion.php"> portal de usuario</a></p>';
             }
+            
             // En caso de error
             else {
 
@@ -72,7 +73,6 @@
                 // Enviamos una cookie
                 $_COOKIE["emailEnviado"] = $email;
                 setcookie("emailEnviado", $email, 10);
-
 
             }
 

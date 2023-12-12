@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>En un página HTML que tenga un ul. A los 5 segundos de terminar de
+        cargarse la página se añadirá un número aleatorio (1-20) de elementos a
+        la lista no ordenada. Cada elemento “li” se creará mediante
+        createElement y se añadirá mediante insertAdjacentElement.
+        </p>
+    
+    <p>En cada elemento se verá el número de orden en que se creó y en cada
+        uno de ellos se guardará como atributo “data-palabra” una palabra que se
+        irá pidiendo por teclado mediante un prompt a medida que se van
+        creando los “li”.
+    </p>
+
+    <p>Es decir cada li deberá ser del estilo:</p>
+    
+    <pre>
+        &lt;ul&gt;
+        …
+        &lt;li data-palabra=”palabra_introducida_por_usuario”&gt;número&lt;/li&gt;
+        …
+        &lt;/ul&gt;</pre>
+
+    <p>Al pulsar sobre cada elemento, la palabra guardada en la etiqueta se verá
+        en la pantalla y el número que se veía hasta ahora se guardará en
+        data-palabra, es decir, cada vez que se pulse sobre una etiqueta se
+        intercambiarán los valores.
+        </p>
+    
+    <ul id="lista"></ul>
+
+    <script>
+        
+        // El programa se ejecuta a los cinco segundos
+        function cincoSegundos(){
+            setTimeout(addLi,5000);
+        }
+
+        cincoSegundos();
+        
+        // Creamos los li con createelement
+        function addLi (){
+            
+            let num = (Math.random() * 2) + 1; // Entre 1 y 20 => [1-19] + 1  # ACTUALIZAR
+
+            for (let i = 1; i <= num; i++) {
+
+                let li = document.createElement("li");               
+
+                let texto = i;
+                li.innerHTML = texto;
+                document.getElementById("lista").appendChild(li);
+
+                texto = prompt("Introduce un dato:");
+                li.setAttribute("data-palabra", texto);
+
+                li.setAttribute("onclick", hazCosas);
+
+            }
+
+        }
+
+        function hazCosas(){
+            alert("¡Voy");
+        }
+
+    </script>
+
+</body>
+</html>
