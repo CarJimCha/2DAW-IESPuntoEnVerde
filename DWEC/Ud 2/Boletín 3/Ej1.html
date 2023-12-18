@@ -48,27 +48,42 @@
         // Creamos los li con createelement
         function addLi (){
             
-            let num = (Math.random() * 2) + 1; // Entre 1 y 20 => [1-19] + 1  # ACTUALIZAR
+            let num = (Math.random() * 19) + 1; // Entre 1 y 20 => [1-19] + 1  
 
+            // Hacemos un for para cada li
             for (let i = 1; i <= num; i++) {
 
+                // Creamos el li
                 let li = document.createElement("li");               
-
                 let texto = i;
                 li.innerHTML = texto;
                 document.getElementById("lista").appendChild(li);
 
+                // Creamos el atributo data-palabra
                 texto = prompt("Introduce un dato:");
                 li.setAttribute("data-palabra", texto);
 
-                li.setAttribute("onclick", hazCosas);
+                // Creamos el onclick
+                let atributo = "hazCosas(" + i + ")";
+                li.setAttribute("onclick", atributo);
 
             }
 
         }
 
-        function hazCosas(){
-            alert("¡Voy");
+        function hazCosas(elem){
+            
+            // Seleccionamos el li adecuado
+            let selected = document.getElementsByTagName("li")[elem -1];
+
+            // Cogemos los datos
+            let num      = selected.innerHTML;
+            let palabra  = selected.getAttribute("data-palabra");
+
+            // Los intercambiamos
+            selected.setAttribute("data-palabra", num);
+            selected.innerHTML = palabra;
+             
         }
 
     </script>

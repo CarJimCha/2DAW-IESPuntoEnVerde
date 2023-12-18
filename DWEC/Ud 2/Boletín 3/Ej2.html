@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de formularios</title>
+</head>
+<body>
+    <h2>Validación de formularios</h2>
+
+    <p>Validación de formulario con 5 campos. Se validará todo desde
+        JavaScript. La validación se realizará desde JavaScript mediante el evento
+        “change” asociado a cada campo.</p>
+
+    <p>Los campos a introducir serán:</p>
+
+    <ul>
+        <li>nombre completo (obligatorio, 3 palabras y el inicio de cada palabra
+            en mayúsculas)</li>
+        <li>email (obligatorio, de tipo email) 
+            <a href="https://elcssar.com/html5/input-type-email-regex-pattern">elcssar</a></li>
+        <li>año (obligatorio, un año, que será siempre como máximo el año
+            actual )</li>
+        <li>sexo (obligatorio, H o M (solo se podrá seleccionar uno))</li>
+        <li>ISBN (978-1-86197-876-9 | 978 1 86197 876 9)</li>
+    </ul>
+
+    <p>En el evento change de cada campo se mostrarán los valores correctos en
+        un tabla de 2 columnas que ya exista en el HTML (la tabla siempre está
+        en pantalla, hacerla en HTML y desde JavaScript solo es necesario ir
+        cambiando el contenido de la segunda columna). La primera columna
+        guarda el nombre del campo y en la segunda el valor o el mensaje de
+        error.</p>
+    
+    <p>Si algo es incorrecto, se debe escribir en esa tabla en color rojo desde
+        JavaScript un mensaje de error. El mensaje de error se sustituirá por el
+        valor correcto en color negro cuando cada campo vaya pasando la
+        validación.</p>
+</body>
+</html>

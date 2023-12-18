@@ -32,7 +32,7 @@
 
         <br>
 
-        <input type="submit" name="enviar">
+        <input type="submit" name="enviar" value="Log in">
 
     </form>
 
@@ -62,10 +62,10 @@
                 if ($file = fopen("usuarios.txt", "a")){
                 
                     // Introducimos un mensaje
-                    $mensaje = $email . "," . $nombre . "," . $edad . "," . $pass;
+                    $mensaje = $email . "," . $nombre . "," . $edad . "," . $pass . "\n";
 
                     // Lo escribimos en el fichero
-                    fwrite($file, "\n");    // Esto hace que meta un salto al principio. Ya veremos si nos jode.
+                    // fwrite($file, "\n");    // Esto hace que meta un salto al principio. Ya veremos si nos jode.
                     fwrite($file, $mensaje);
                     
                     // Cerramos el fichero

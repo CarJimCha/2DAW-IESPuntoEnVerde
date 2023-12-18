@@ -22,7 +22,7 @@
     <form action="" method="post">
         
         <label>E-mail:</label><br>
-        <input type="text" name="email" default="
+        <input type="text" name="email" value="
             <?php 
             // En caso de que ya haya intentado hacer login, mantendrá el mail cuanto dure la cookie            
             if (isset($_COOKIE["emailEnviado"])){
@@ -35,7 +35,7 @@
 
         <br>
 
-        <input type="submit" name="enviar" id="enviar">
+        <input type="submit" name="enviar" value="Log in">
 
     </form>
 
@@ -51,7 +51,7 @@
             if (($email == "usuario@gmail.com") && ($pass == "1234")){
 
                 // Si coinciden, nos redirige al portal de usuario
-                echo '<p>Puedes seguir hacia el <a href="/u4/Examen%20PHP/sesion.php"> portal de usuario</a></p>';
+                header("Location: portal.php");
             }
             
             // En caso de error
