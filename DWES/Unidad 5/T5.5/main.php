@@ -37,7 +37,7 @@
         $arraySeries[] = $FMA;
         $arraySeries[] = $DOR;
 
-        $arraySeries[$ejemplo] = new Serie("Ejemplo", 10, "GOAT");
+        // $arraySeries[$ejemplo] = new Serie("Ejemplo", 10, "GOAT");   // Prueba de implementarlo directamente en el array
 
         $arrayJuegos = array();
         $arrayJuegos[] = $PKMA;
@@ -45,6 +45,26 @@
         $arrayJuegos[] = $PKMC;
         $arrayJuegos[] = $PKMD;
         $arrayJuegos[] = $PKME;
+
+
+        // Entregamos algunos videojuegos y series
+
+        $GOT->entregar();
+        $DEX->entregar();
+        $PKMD->entregar();
+        $PKME->entregar();
+
+
+        // Cuenta cuantas series y videojuegos hay entregados
+        // Al contarlos, devuelvelos (devolver)
+
+
+
+        // Indica el videojuego con más horas estimadas y la serie con más temporadas
+        // Muestra sus datos en pantalla con toda su información (toString)
+
+
+
 
     ?>
     

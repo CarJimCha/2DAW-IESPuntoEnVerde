@@ -5,13 +5,11 @@
 // Crear la interfaz Entregable
 interface Entregable{
 
-    private $entregado;
+    public function entregar();
 
-    public function entregar(){
-    }
+    public function devolver();
 
-    public function devolver(){
-    }
+    public function isEntregado();
 
 }
 

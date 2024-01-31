@@ -3,7 +3,7 @@
 // Autor: Carlos J
 
 // Crear clase Serie
-class Serie {
+class Serie implements Entregable {
 
 
     // Atributos privados
@@ -57,6 +57,21 @@ class Serie {
         echo "<p>Entregado: " . $this->entregado . "</p>";
         echo "<p>Género: " . $this->genero . "</p>";
     }  
+
+    
+    // Implementamos los métodos de Entregable
+    public function entregar(){
+        $this->entregado = true;
+    }
+
+    public function devolver(){
+        $this->entregado = false;
+    }
+
+    public function isEntregado(){
+        return $this->entregado;
+    }
+
       
 }
 

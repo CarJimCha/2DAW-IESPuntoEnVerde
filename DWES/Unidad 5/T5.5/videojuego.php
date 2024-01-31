@@ -3,7 +3,7 @@
 // Autor: Carlos J
 
 // Crear clase Videojuego
-class Videojuego {
+class Videojuego implements Entregable {
 
 
     // Atributos privados
@@ -58,6 +58,20 @@ class Videojuego {
         echo "<p>Género: " . $this->genero . "</p>";
     }  
       
+
+    // Implementamos los métodos de Entregable
+    public function entregar(){
+        $this->entregado = true;
+    }
+
+    public function devolver(){
+        $this->entregado = false;
+    }
+
+    public function isEntregado(){
+        return $this->entregado;
+    }
+    
 }
 
 ?>
