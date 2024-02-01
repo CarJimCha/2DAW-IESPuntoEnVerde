@@ -2,6 +2,8 @@
 
 // Autor: Carlos J
 
+include_once("entregable.php");
+
 // Crear clase Videojuego
 class Videojuego implements Entregable {
 

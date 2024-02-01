@@ -13,6 +13,7 @@
         // Instanciamos las clases
         require_once("serie.php");
         require_once("videojuego.php");
+        // require_once("entregable.php");
 
 
         // Creamos los objetos para meterlos en el array
@@ -48,11 +49,13 @@
 
 
         // Entregamos algunos videojuegos y series
-
         $GOT->entregar();
         $DEX->entregar();
         $PKMD->entregar();
         $PKME->entregar();
+
+        $TWD->toString();
+        $GOT->toString();
 
 
         // Cuenta cuantas series y videojuegos hay entregados

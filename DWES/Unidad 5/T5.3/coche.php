@@ -16,7 +16,7 @@ class Coche extends Vehiculo{
 
 
     // Constructor
-    public function __construct($marca, $color, $plazas = 0, $matricula = "", $kilometros){
+    public function __construct($marca, $color, $plazas = 0, $matricula = ""){
         $this->marca = $marca;
         $this->color = $color;
         
@@ -26,7 +26,7 @@ class Coche extends Vehiculo{
             $this->plazas = 0;
         }
         
-        if ($matricula == $matricula){      // Validar aquí con un regex
+        if (preg_match_all("/^\d{4} [B-DF-HJ-NPR-TV-Z]{3}$/", $matricula)){      
             $this->matricula = $matricula;
         } else {
             $this->matricula = $matricula;
@@ -36,12 +36,33 @@ class Coche extends Vehiculo{
 
 
     // Matricula: get y set
+    public function getMatricula(){
+        return $this->matricula;
+    }
+
+    public function setMatricula($matricula){
+        $this->matricula = $matricula;
+    }
 
 
     // puedeCircular => matrícula válida
+    public function puedeCircular(){
+        if (preg_match_all("/^\d{4} [B-DF-HJ-NPR-TV-Z]{3}$/", $this->matricula)){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
     // viajar => Va sumando números positivos a kilómetros
+    public function viajar($km){
+        if (is_nan($km) || $km < 0){
+            echo "<p>La cantidad de kilómetros introducida no es válida.</p>";
+        } else {
+            $this->kilometros += $km;
+        }
+    }
 
 
     // toString
