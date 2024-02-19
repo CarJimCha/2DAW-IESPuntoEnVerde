@@ -1,6 +1,8 @@
 <?php
 
     // Incluye ficheros de variables y funciones
+    require_once("../utiles/funciones.php");
+    require_once("../utiles/variables.php");
 
 ?>
 <!DOCTYPE html>
@@ -21,10 +23,16 @@
 
         // Realiza la consulta a ejecutar en la base de datos en una variable
         
+
         // Obten el resultado de ejecutar la consulta para poder recorrerlo. El resultado es de tipo PDOStatement
         
 
-    ?>
+        $resultado->bindColumn(1, $nombreDpto);
+        $resultado->bindColumn(2, $presupuesto);
+        $resultado->bindColumn(3, $nombreSede);
+
+        ?>
+        
         <table border="1" cellpadding="10">
             <thead>
                 <th>Departamento</th>
@@ -37,6 +45,7 @@
                 
             </tbody>
         </table>
+        
         <div class="contenedor">
             <div class="enlaces">
                 <a href="../index.html">Volver a página de listados</a>
@@ -47,7 +56,9 @@
     <?php
 
         // Libera el resultado y cierra la conexión
-    
+        $resultado = null;
+        $conexion = null;
+
     ?>
 </body>
 </html>

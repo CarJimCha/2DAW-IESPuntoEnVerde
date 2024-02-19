@@ -1,7 +1,8 @@
 <?php
 
     // Incluye ficheros de variables y funciones
-
+    require_once("../utiles/funciones.php");
+    require_once("../utiles/variables.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +18,14 @@
 
     <?php
         // Realiza la conexion a la base de datos a través de una función 
+        $conexion = null; // conectarPDO ... ;
 
         // Realiza la consulta a ejecutar en la base de datos en una variable
+        $consulta = "SELECT nombre, direccion, id
+                        FROM sedes;";
 
         // Obten el resultado de ejecutar la consulta para poder recorrerlo. El resultado es de tipo PDOStatement
+        $resultado = null; //resultadoConsulta($conexion, $consulta);
     
     ?>
 
@@ -35,6 +40,7 @@
 
         </tbody>
     </table>
+    
     <div class="contenedor">
         <div class="enlaces">
             <a href="../index.html">Volver a página de listados</a>
@@ -44,7 +50,9 @@
     <?php
 
         // Libera el resultado y cierra la conexión
-    
+        $resultado = null;
+        $conexion = null;
+
     ?>
 </body>
 </html>
