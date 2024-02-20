@@ -1,9 +1,8 @@
 <?php
 
     // Incluye ficheros de variables y funciones
-    require_once("../utiles/funciones.php");
-    require_once("../utiles/variables.php");
-
+    require "utiles/funciones.php";
+    require "utiles/variables.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,19 +19,18 @@
     <?php
         
         // Realiza la conexion a la base de datos a través de una función 
-        $conexion = conectarPDO($host, $user, $password, $bbdd);
-
+        $conexion=conectarPDO($host, $user, $password,$bbdd);
         // Realiza la consulta a ejecutar en la base de datos en una variable
-        $consulta = "SELECT e.nombre nombreEmpleado,    e.apellidos,        e.email,    
-                            e.hijos,                    e.salario,          p.nacionalidad,
-                            d.nombre nombreDpto,        s.nombre nombreSede
-                        FROM empleados e INNER JOIN paises p ON e.pais_id = p.id
-                                    INNER JOIN departamentos d ON e.departamento_id = d.id
-                                    INNER JOIN sedes s ON d.sede_id = s.id
-                        "; 
-
-        // Obten el resultado de ejecutar la consulta para poder recorrerlo. El 
-        $resultado = resultadoConsulta($conexion, $consulta);
+            // se ponen etiquetas en campos cn mismo nombre, mientras sea distinta no machaca en el arr assoc
+        $consulta= "SELECT  e.nombre nEmple, e.apellidos, e.email, e.hijos, e.salario,
+                            p.nacionalidad, 
+                            d.nombre nDepart, 
+                            s.nombre nSede
+                    FROM  empleados e   INNER JOIN departamentos d ON e.departamentdo_id=d.id
+                                        INNER JOIN sedes s ON s.id=d.sede_id
+                                        INNER JOIN paises p ON p.id=e.pais_id ";
+        // Obten el resultado de ejecutar la consulta para poder recorrerlo. 
+        $resultado= resultadoConsulta($conex,$consulta);
 
     ?>
         
@@ -50,12 +48,12 @@
         <tbody>
             
             <!-- Mostrar todos los datos de los empleados -->
-            <?php while ($fila = $resultado->fetch(PDO::FETCH_OBJ)) : ?>
-            
-                <tr>
-                    <th> <php echo $fila->nombreEmpleado; ?></th>
-                </tr>
-            <?php endwhile; ?>
+
+            //el while y los echo.
+            <?php
+            while($fila=$resultado->fetch(PDO::FETCH_OBJ))
+            ?>
+           
         </tbody>
     </table>
         
@@ -67,9 +65,7 @@
     <?php
 
         // Libera el resultado y cierra la conexión
-        $resultado = null;
-        $conexion = null;
-        
+    
     ?>
 </body>
 </html>

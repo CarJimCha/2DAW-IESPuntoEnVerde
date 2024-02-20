@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `dwes_tare_empresas`
+-- Base de datos: `dwes_tarde_empresas`
 --
 
 -- --------------------------------------------------------
