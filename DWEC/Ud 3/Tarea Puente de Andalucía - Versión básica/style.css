@@ -1,22 +1,21 @@
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li a {
-    display: block;
-    width: 60px;
-    background-color: #dddddd;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-  div.derecha {
-    width: 33%;
+li a {
+  display: block;
+  width: 60px;
+  background-color: #dddddd;
+}
+
+div.derecha {
+  width: 33%;
   box-sizing: inherit;
   display: inline-block;
   background: #fcc;
   padding: 10px;
   float: right;
-  margin-top:-65%;
-  
-  }
+  margin-top: -65%;
+}
